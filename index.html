@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equilibrium - Space Survival</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="panel left-panel">
+      <h1>🚀 EQUILIBRIUM</h1>
+      <p class="subtitle">Survie gravitationnelle en 3 niveaux</p>
+
+      <div class="card">
+        <h2>Contrôles</h2>
+        <ul>
+          <li><strong>A / ←</strong> : se déplacer autour de la planète</li>
+          <li><strong>D / →</strong> : se déplacer dans l'autre sens</li>
+          <li><strong>Espace / W / ↑</strong> : sauter</li>
+          <li><strong>R</strong> : recommencer le niveau</li>
+          <li><strong>N</strong> : niveau suivant (debug)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Objectif</h2>
+        <p>Survivre, éviter les météorites, profiter des puits de gravité et atteindre le score requis pour débloquer le niveau suivant.</p>
+        <div id="goalText" class="goal"></div>
+      </div>
+
+      <div class="card comparison-card">
+        <h2>Tableau comparatif</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Niveau</th>
+              <th>Planètes</th>
+              <th>Météorites</th>
+              <th>Destruction</th>
+              <th>Spécificité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 - Equilibrium</td>
+              <td>5</td>
+              <td>4 s</td>
+              <td>2 s</td>
+              <td>Gravité stable</td>
+            </tr>
+            <tr>
+              <td>2 - Chaos</td>
+              <td>8</td>
+              <td>3 s</td>
+              <td>1.5 s</td>
+              <td>Gravité forte + vitesse ↑</td>
+            </tr>
+            <tr>
+              <td>3 - Gravity Flip</td>
+              <td>10</td>
+              <td>2 s</td>
+              <td>1 s</td>
+              <td>Gravité inversée</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </aside>
+
+    <main class="game-shell">
+      <div class="topbar">
+        <div class="badge">Niveau: <span id="levelName">Equilibrium</span></div>
+        <div class="badge">Score: <span id="score">0</span></div>
+        <div class="badge">Vies: <span id="lives">3</span></div>
+        <div class="badge">Temps: <span id="timer">0.0</span>s</div>
+      </div>
+
+      <canvas id="gameCanvas" width="1100" height="700"></canvas>
+
+      <div class="hud-bottom">
+        <div id="messageBox" class="message-box">Évite les météorites et utilise les planètes comme appuis.</div>
+        <div class="actions">
+          <button id="restartBtn">Recommencer</button>
+          <button id="nextBtn">Niveau suivant</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

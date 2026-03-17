@@ -1,0 +1,100 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: radial-gradient(circle at top, #151c38 0%, #060914 60%, #03040a 100%);
+  color: #eef2ff;
+}
+.app {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  min-height: 100vh;
+}
+.panel {
+  background: rgba(8, 12, 24, 0.92);
+  border-right: 1px solid rgba(255,255,255,0.08);
+  padding: 20px;
+  overflow: auto;
+}
+.left-panel h1 { margin: 0 0 8px; font-size: 34px; }
+.subtitle { margin-top: 0; color: #aebcff; }
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
+.card h2 { margin-top: 0; font-size: 18px; }
+.card ul { padding-left: 18px; margin-bottom: 0; }
+.card li { margin-bottom: 8px; }
+.goal {
+  font-weight: 700;
+  color: #8ef0c9;
+}
+.comparison-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.comparison-card th, .comparison-card td {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 8px 6px;
+  text-align: left;
+  vertical-align: top;
+}
+.game-shell {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+}
+.topbar, .hud-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.badge {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 600;
+}
+#gameCanvas {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, rgba(12,18,39,0.9), rgba(3,4,10,0.98));
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+.message-box {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 14px;
+  border-radius: 14px;
+  min-height: 48px;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+}
+button {
+  cursor: pointer;
+  border: 0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6d7cff, #42d0ff);
+  color: #08101f;
+}
+button:hover { filter: brightness(1.06); }
+@media (max-width: 1200px) {
+  .app { grid-template-columns: 1fr; }
+  .panel { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+}
